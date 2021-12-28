@@ -4,7 +4,7 @@
   <div mat-dialog-content>
     <mat-form-field appearance="outline" class="w100">
       <mat-label>Code</mat-label>
-      <input matInput formControlName="code">
+      <input matInput formControlName="code" [inputMask]="codeInputMask">
     </mat-form-field>
     <mat-form-field appearance="outline" class="w100">
       <mat-label>Quantity</mat-label>
@@ -25,7 +25,7 @@
   </div>
 
   <div mat-dialog-actions class="actions-container">
-    <button mat-stroked-button>Cancel</button>
-    <button mat-flat-button color="primary">Save</button>
+    <button mat-stroked-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="productForm.getRawValue()" [disabled]="!productForm.valid || productForm.pristine">Save</button>
   </div>
 </form>

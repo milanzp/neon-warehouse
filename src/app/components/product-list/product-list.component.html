@@ -1,7 +1,12 @@
 <div class="list-container">
-  <div *ngFor="let product of products" class="list-item">
-    <p>{{product.code}}</p>
-    <p>Quantity: {{product.quantity}}</p>
-    <p>Location: {{product.floor}} / {{product.section}}</p>
-  </div>
+  <mat-card *ngFor="let product of products" class="list-item">
+    <div>
+      <h4>{{product.code}}</h4>
+      <p>Quantity: {{product.quantity}}</p>
+      <p>Location: {{product.floor}} / {{product.section}}</p>
+    </div>
+    <button mat-icon-button color="primary" aria-label="Edit product" (click)="editProduct.emit(product)">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-card>
 </div>

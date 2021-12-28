@@ -1,3 +1,3 @@
-<button (click)="addProduct()">New Product</button>
+<button mat-flat-button color="primary" (click)="addProduct()">New Product</button>
 
-<app-product-list [products]="products"></app-product-list>
+<app-product-list [products]="products" (editProduct)="onEditProduct($event)"></app-product-list>

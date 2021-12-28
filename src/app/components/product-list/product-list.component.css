@@ -3,7 +3,7 @@
 }
 
 .list-item {
-  border: 1px solid black;
-  margin: 16px;
-  padding: 16px;
+  margin: 24px;
+  display: flex;
+  justify-content: space-between;
 }

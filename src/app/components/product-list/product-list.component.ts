@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Product } from "src/app/models/product.model";
 
 @Component({
   selector: 'app-product-list',
@@ -6,5 +7,8 @@ import { Component, Input } from "@angular/core";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  @Input() products: any[];
+  @Input() products: Product[] | null;
+
+  @Output() editProduct = new EventEmitter<any>();
+
 }
