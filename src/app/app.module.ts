@@ -8,6 +8,7 @@ import { ProductDialogComponent } from './components/product-dialog/product-dial
 import { ApiService } from './services/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputMaskModule } from '@ngneat/input-mask';
+import { ProductFiltersComponent } from './components/product-filters/product-filters.component';
 
 // Material imports
 import { MatDialogModule } from '@angular/material/dialog';
@@ -18,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 const materialModules = [
@@ -27,12 +29,16 @@ const materialModules = [
   MatSelectModule,
   MatButtonModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatChipsModule
 ]
 
 @NgModule({
   declarations: [
-    AppComponent, ProductListComponent, ProductDialogComponent
+    AppComponent,
+    ProductListComponent,
+    ProductDialogComponent,
+    ProductFiltersComponent
   ],
   imports: [
     BrowserModule,

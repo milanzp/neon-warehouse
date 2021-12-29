@@ -32,6 +32,42 @@ export class ApiService {
       quantity: 62,
       floor: 2,
       section: 3
-    }
+    },
+    {
+      code: 'YZFR 1000',
+      quantity: 13,
+      floor: 3,
+      section: 1
+    },
+    {
+      code: 'MS 1260',
+      quantity: 223,
+      floor: 1,
+      section: 2
+    },
+    {
+      code: 'GSXR 1000',
+      quantity: 49,
+      floor: 2,
+      section: 1
+    },
+    {
+      code: 'ASDF 357912',
+      quantity: 8,
+      floor: 2,
+      section: 2
+    },
+    {
+      code: 'XTZ 75000',
+      quantity: 54,
+      floor: 2,
+      section: 3
+    },
+    {
+      code: 'MT 0009',
+      quantity: 442,
+      floor: 1,
+      section: 3
+    },
   ];
 }

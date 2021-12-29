@@ -1,0 +1,25 @@
+.controls-line {
+  margin: 24px auto;
+  text-align: right;
+  max-width: 1024px;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 1024px;
+  display: flex;
+}
+
+.product-list {
+  height: calc(100vh - 180px);
+  overflow: auto;
+}
+
+.page-title {
+  text-align: center;
+  background: #3f51b5;
+  color: white;
+  height: 72px;
+  line-height: 72px;
+  font-size: 36px;
+}

@@ -1,0 +1,7 @@
+.filters-form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 300px;
+  padding: 24px 0;
+}

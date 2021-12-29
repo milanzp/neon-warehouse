@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { createMask } from "@ngneat/input-mask";
 import { numberOfFloors, numberOfSections } from "src/app/app-config";
+import { arrayFormTo } from "src/app/utils/array.helper";
 
 @Component({
   selector: 'app-product-dialog',
@@ -26,8 +27,7 @@ export class ProductDialogComponent {
     section: new FormControl('', Validators.required),
   });
 
-  floorOptions = Array(numberOfFloors).fill(0).map((_, i) => i+1);
-  sectionOptions = Array(numberOfSections).fill(0).map((_, i) => i+1);
+  floorOptions = arrayFormTo(1, numberOfFloors);
+  sectionOptions = arrayFormTo(1, numberOfSections);
 
-  
 }

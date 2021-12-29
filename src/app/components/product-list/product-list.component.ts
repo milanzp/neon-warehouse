@@ -9,6 +9,6 @@ import { Product } from "src/app/models/product.model";
 export class ProductListComponent {
   @Input() products: Product[] | null;
 
-  @Output() editProduct = new EventEmitter<any>();
+  @Output() editProduct = new EventEmitter<Product>();
 
 }

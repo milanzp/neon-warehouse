@@ -1,12 +1,18 @@
-<div class="list-container">
+<div *ngIf="products?.length; else noProducts">
   <mat-card *ngFor="let product of products" class="list-item">
     <div>
-      <h4>{{product.code}}</h4>
-      <p>Quantity: {{product.quantity}}</p>
-      <p>Location: {{product.floor}} / {{product.section}}</p>
+      <mat-card-title>{{product.code}}</mat-card-title>
+      <mat-card-subtitle>Quantity: {{product.quantity}}</mat-card-subtitle>
+      <mat-card-content>
+        <span>Location: {{product.floor}} / {{product.section}}</span>
+      </mat-card-content>
     </div>
     <button mat-icon-button color="primary" aria-label="Edit product" (click)="editProduct.emit(product)">
       <mat-icon>edit</mat-icon>
     </button>
   </mat-card>
 </div>
+
+<ng-template #noProducts>
+  <p class="no-product-info">No products</p>
+</ng-template>
