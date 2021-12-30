@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
       width: '400px',
       data: {
         title: 'Create new product',
+        existingCodes: this.products.map(product => product.code),
       },
     });
 

@@ -3,7 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { createMask } from '@ngneat/input-mask';
 import { numberOfFloors, numberOfSections } from 'src/app/app-config';
+import { ProductDialogData } from 'src/app/models/product-dialog-data';
 import { range } from 'src/app/utils/array.helper';
+import { Unique } from 'src/app/validators/unique.validator';
 
 @Component({
   selector: 'app-product-dialog',
@@ -11,10 +13,13 @@ import { range } from 'src/app/utils/array.helper';
   styleUrls: ['./product-dialog.component.css'],
 })
 export class ProductDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: ProductDialogData) {
     if (data.product) {
       this.productForm.reset({ ...data.product });
       this.productForm.controls.code.disable();
+    }
+    else {
+      this.productForm.controls.code.setValidators(Unique(this.data.existingCodes || []));
     }
   }
 
