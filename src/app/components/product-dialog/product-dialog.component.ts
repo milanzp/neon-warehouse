@@ -1,19 +1,19 @@
-import { Component, Inject } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { createMask } from "@ngneat/input-mask";
-import { numberOfFloors, numberOfSections } from "src/app/app-config";
-import { arrayFormTo } from "src/app/utils/array.helper";
+import { Component, Inject } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { createMask } from '@ngneat/input-mask';
+import { numberOfFloors, numberOfSections } from 'src/app/app-config';
+import { range } from 'src/app/utils/array.helper';
 
 @Component({
   selector: 'app-product-dialog',
   templateUrl: './product-dialog.component.html',
-  styleUrls: ['./product-dialog.component.css']
+  styleUrls: ['./product-dialog.component.css'],
 })
 export class ProductDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     if (data.product) {
-      this.productForm.reset({...data.product});
+      this.productForm.reset({ ...data.product });
       this.productForm.controls.code.disable();
     }
   }
@@ -27,7 +27,6 @@ export class ProductDialogComponent {
     section: new FormControl('', Validators.required),
   });
 
-  floorOptions = arrayFormTo(1, numberOfFloors);
-  sectionOptions = arrayFormTo(1, numberOfSections);
-
+  floorOptions = range(1, numberOfFloors);
+  sectionOptions = range(1, numberOfSections);
 }

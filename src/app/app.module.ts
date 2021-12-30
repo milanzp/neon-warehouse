@@ -19,8 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
-
+import { MatChipsModule } from '@angular/material/chips';
 
 const materialModules = [
   MatDialogModule,
@@ -30,15 +29,15 @@ const materialModules = [
   MatButtonModule,
   MatIconModule,
   MatCardModule,
-  MatChipsModule
-]
+  MatChipsModule,
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductDialogComponent,
-    ProductFiltersComponent
+    ProductFiltersComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +49,6 @@ const materialModules = [
     ...materialModules,
   ],
   providers: [ApiService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

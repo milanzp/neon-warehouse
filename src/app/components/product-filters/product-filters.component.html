@@ -1,9 +1,19 @@
 <form [formGroup]="filtersForm" class="filters-form">
-
   <mat-form-field appearance="outline">
     <mat-label>Search by code</mat-label>
-    <input matInput type="text" formControlName="code" [inputMask]="codeFilterMask">
-    <button *ngIf="filtersForm" matSuffix mat-icon-button aria-label="Clear" (click)="cancelCodeFilter()">
+    <input
+      matInput
+      type="text"
+      formControlName="code"
+      [inputMask]="codeFilterMask"
+    />
+    <button
+      *ngIf="filtersForm"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="cancelCodeFilter()"
+    >
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
@@ -11,8 +21,13 @@
   <mat-form-field appearance="outline">
     <mat-label>Floors</mat-label>
     <mat-chip-list multiple formControlName="floor">
-      <mat-chip *ngFor="let floor of floorOptions" [value]="floor" [selected]=filtersForm.controls.floor.value.includes(floor) (click)="onLocationClick('floor', floor)">
-        Floor {{floor}}
+      <mat-chip
+        *ngFor="let floor of floorOptions"
+        [value]="floor"
+        [selected]="filtersForm.controls.floor.value.includes(floor)"
+        (click)="onLocationClick('floor', floor)"
+      >
+        Floor {{ floor }}
       </mat-chip>
     </mat-chip-list>
   </mat-form-field>
@@ -20,10 +35,14 @@
   <mat-form-field appearance="outline">
     <mat-label>Sections</mat-label>
     <mat-chip-list multiple formControlName="section">
-      <mat-chip *ngFor="let section of sectionOptions" [value]="section" [selected]=filtersForm.controls.section.value.includes(section) (click)="onLocationClick('section', section)">
-        Section {{section}}
+      <mat-chip
+        *ngFor="let section of sectionOptions"
+        [value]="section"
+        [selected]="filtersForm.controls.section.value.includes(section)"
+        (click)="onLocationClick('section', section)"
+      >
+        Section {{ section }}
       </mat-chip>
     </mat-chip-list>
   </mat-form-field>
-
 </form>

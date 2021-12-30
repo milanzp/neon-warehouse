@@ -1,10 +1,18 @@
 <h2 class="page-title">Neon Warehouse</h2>
 
 <div class="controls-line">
-  <button mat-flat-button color="primary" (click)="addProduct()">New Product</button>
+  <button mat-flat-button color="primary" (click)="addProduct()">
+    New Product
+  </button>
 </div>
 
 <div class="content">
-  <app-product-filters (filterChanged)="onFilterChanged($event)"></app-product-filters>
-  <app-product-list [products]="filteredProducts" (editProduct)="onEditProduct($event)" class="product-list"></app-product-list>
+  <app-product-filters
+    (filterChanged)="onFilterChanged($event)"
+  ></app-product-filters>
+  <app-product-list
+    [products]="filteredProducts"
+    (editProduct)="onEditProduct($event)"
+    class="product-list"
+  ></app-product-list>
 </div>
